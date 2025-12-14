@@ -1,0 +1,48 @@
+---
+---
+<section>
+  <h2 class="section-title">Skills</h2>
+
+  <div class="grid">
+    {[
+      "React", "Node.js", "JavaScript", "Astro", "APIs",
+      "Bootstrap", "Tailwind", "AI", "Databases",
+      "Git", "Figma", "Hosting", "Deploys"
+    ].map((s) => (
+      <div class="skill-card">{s}</div>
+    ))}
+  </div>
+</section>
+
+<style>
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1.2rem;
+    margin-top: 2rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+    color: var(--accent);
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .skill-card {
+    background: var(--panel);
+    border: 1px solid var(--panel-border);
+    padding: 1.1rem;
+    border-radius: 8px;
+    text-align: center;
+    transition: .25s ease;
+    transform: translateY(12px);
+  }
+
+  .skill-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-4px);
+    box-shadow: 0 4px 14px rgba(142, 175, 255, 0.12);
+  }
+</style>
+
