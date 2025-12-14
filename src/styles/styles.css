@@ -1,0 +1,47 @@
+:root {
+  --bg: #0D0F12;
+  --bg-light: #16181D;
+  --fg: #E4E6EB;
+  --fg-dim: #9AA0A6;
+  --accent: #8EAFFF;
+  --accent-dim: #6A8EDC;
+
+  --font-terminal: "JetBrains Mono", monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-terminal);
+  line-height: 1.6;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeInUp 0.8s cubic-bezier(.25,.46,.45,.94) forwards;
+}
+
+section {
+  padding: 6rem 2rem;
+  max-width: 950px;
+  margin: auto;
+}
+
+/* 3D + Glow Intensified */
+.timeline .content {
+  position: relative;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  will-change: transform, box-shadow;
+  overflow: hidden;
+}
+
+/* Extra shadow on hover */
+.timeline .content:hover {
+  box-shadow: 
+    0 18px 45px rgba(0, 0, 0, 0.45),
+    0 0 25px rgba(255, 255, 255, 0.12);
+}

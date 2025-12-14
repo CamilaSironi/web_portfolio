@@ -1,0 +1,100 @@
+---
+import "../styles/styles.css";
+---
+
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Camila Sironi — Portfolio</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --bg: #1a1a1a;
+        --panel: #1f1f1f;
+        --panel-border: #2a2a2a;
+        --text: #e6e6e6;
+        --text-dim: #bbbbbb;
+        --accent: #3affa8;
+      }
+
+      html, body {
+        margin: 0;
+        padding: 0;
+        background: var(--bg);
+        color: var(--text);
+        font-family: "JetBrains Mono", monospace;
+        min-height: 100vh;
+      }
+
+      .terminal-bar {
+        width: 100%;
+        background: var(--panel);
+        border-bottom: 1px solid var(--panel-border);
+        padding: 12px 20px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+      }
+      .dot.red { background: #ff5f56; }
+      .dot.yellow { background: #ffbd2e; }
+      .dot.green { background: #27c93f; }
+
+      .cursor {
+        display: inline-block;
+        width: 10px;
+        height: 20px;
+        background: var(--accent);
+        margin-left: 6px;
+        animation: blink 1s infinite steps(2);
+      }
+
+      @keyframes blink { 50% { opacity: 0; } }
+
+      main {
+        width: 100%;
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 60px 20px;
+      }
+
+      body {
+        opacity: 0;
+        animation: fadeIn 0.8s ease-out forwards;
+      }
+
+      @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="terminal-bar">
+      <div class="dot red"></div>
+      <div class="dot yellow"></div>
+      <div class="dot green"></div>
+
+      <span style="margin-left: 12px; color: var(--text-dim);">
+        camila-portfolio ~/home
+        <span class="cursor"></span>
+      </span>
+    </div>
+
+    <main>
+      <slot />
+    </main>
+  
+  </body>
+</html>
