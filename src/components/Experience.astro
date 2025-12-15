@@ -1,0 +1,175 @@
+---
+const experience = [
+  {
+    role: "Frontend Developer",
+    company: "Freelancer",
+    date: "2023 — Present",
+    description:
+      "Building responsive interfaces, landing pages and UI components using React, Astro, and modern CSS methodologies. Focus on performance, smooth interactions and clean component architecture.",
+  },
+  {
+    role: "Fullstack Developer",
+    company: "Freelancer",
+    date: "2022 — 2024",
+    description:
+      "Design of MVPs using React, REST APIs, authentication, backend logic with Node.js and Express. Improved UI flows and solved user-facing bugs while collaborating in small teams.",
+  },
+  {
+    role: "Frontend Developer",
+    company: "Work simulations by NoCountry",
+    date: "2024",
+    description:
+      "Participated in real-work simulation projects collaborating with developers, designers and PMs to build end-to-end web applications.",
+  },
+  {
+    role: "Technical & Customer Support",
+    company: "Various Companies",
+    date: "2018 — 2022",
+    description:
+      "Experience in problem-solving, clear communication, attention to detail and delivering a smooth experience for users — skills that deeply influenced my actual work as a developer.",
+  },
+];
+---
+
+<section id="experience" class="experience">
+  <h2 class="section-title">Work Experience</h2>
+
+  <div class="timeline">
+    {experience.map((job, i) => (
+      <div class={`item ${i % 2 === 0 ? "left" : "right"}`}>
+        <div class="content">
+          <h3>{job.role}</h3>
+          <h4>{job.company}</h4>
+          <span class="date">{job.date}</span>
+          <p>{job.description}</p>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
+
+<style>
+  .experience {
+    padding: 140px 20px;
+    max-width: 1100px;
+    margin: auto;
+  }
+
+  .section-title {
+    text-align: center;
+    color: var(--accent);
+    font-size: 2.4rem;
+    margin-bottom: 60px;
+  }
+
+  .timeline {
+    position: relative;
+    padding-left: 0;
+    margin: 0 auto;
+  }
+
+  /* Línea vertical */
+  .timeline::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: 2px;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateX(-1px);
+  }
+
+  .item {
+    position: relative;
+    width: 50%;
+    padding: 30px 40px;
+    box-sizing: border-box;
+  }
+
+  /* Círculo */
+  .item::before {
+    content: "";
+    position: absolute;
+    top: 36px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--accent);
+    border: 3px solid #111;
+    z-index: 2;
+  }
+
+  .item.left {
+    left: 0;
+    text-align: right;
+  }
+
+  .item.left::before {
+    right: -7px;
+  }
+
+  .item.right {
+    left: 50%;
+    text-align: left;
+  }
+
+  .item.right::before {
+    left: -7px;
+  }
+
+  .content {
+    background: #1b1b1b;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 22px 26px;
+    border-radius: 12px;
+    box-shadow: 0 4px 25px rgba(0,0,0,0.35);
+  }
+
+  .content h3 {
+    margin: 0;
+    font-size: 1.4rem;
+    color: white;
+  }
+
+  .content h4 {
+    margin: 4px 0 10px;
+    font-weight: 500;
+    color: var(--accent);
+  }
+
+  .date {
+    display: block;
+    color: var(--text-dim);
+    font-size: 0.9rem;
+    margin-bottom: 12px;
+  }
+
+  .content p {
+    margin: 0;
+    line-height: 1.6;
+    color: var(--text);
+    opacity: 0.9;
+  }
+
+  @media (max-width: 800px) {
+    .timeline::before {
+      left: 12px;
+    }
+
+    .item {
+      width: 100%;
+      padding-left: 40px;
+      padding-right: 20px;
+      text-align: left !important;
+    }
+
+    .item::before {
+      left: 2px;
+    }
+
+    .item.left, .item.right {
+      left: 0;
+    }
+  }
+</style>
