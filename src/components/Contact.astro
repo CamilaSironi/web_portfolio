@@ -1,0 +1,136 @@
+---
+---
+
+<section id="contact" class="contact">
+  <h2 class="section-title">Contact</h2>
+
+  <p class="intro">
+    Let’s build something great together.  
+    Whether it’s a project, collaboration or just a question — I’d love to hear from you.
+  </p>
+
+  <div class="terminal-box">
+    <div class="terminal-header">
+      <span class="dot red"></span>
+      <span class="dot yellow"></span>
+      <span class="dot green"></span>
+    </div>
+
+    <div class="terminal-content">
+      <p class="command">$ connect —w/me</p>
+
+      <ul class="contact-list">
+        <li>
+          <span class="label">Email:</span>
+          <a href="mailto:sironicamila98@gmail.com">sironicamila98@gmail.com</a>
+        </li>
+
+        <li>
+          <span class="label">LinkedIn:</span>
+          <a href="https://www.linkedin.com/in/camila-sironi" target="_blank">
+            linkedin.com/in/camilasironi
+          </a>
+        </li>
+
+        <li>
+          <span class="label">GitHub:</span>
+          <a href="https://github.com/CamilaSironi" target="_blank">
+            github.com/CamilaSironi
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<style>
+  .contact {
+    padding: 140px 20px;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .section-title {
+    font-size: 2rem;
+    color: var(--accent);
+    margin-bottom: 20px;
+  }
+
+  .intro {
+    max-width: 600px;
+    margin: 0 auto 40px auto;
+    color: var(--text-dim);
+    font-size: 1.1rem;
+  }
+
+  .terminal-box {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    backdrop-filter: blur(8px);
+  }
+
+  .terminal-header {
+    background: rgba(255,255,255,0.07);
+    padding: 10px 14px;
+    display: flex;
+    gap: 8px;
+  }
+
+  .dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+  }
+  .red { background: #ff5f56; }
+  .yellow { background: #ffbd2e; }
+  .green { background: #27c93f; }
+
+  .terminal-content {
+    padding: 30px;
+    text-align: left;
+    font-family: "JetBrains Mono", monospace;
+  }
+
+  .command {
+    color: var(--accent);
+    margin-bottom: 25px;
+    font-weight: 500;
+  }
+
+  .contact-list {
+    list-style: none;
+    padding: 0;
+    line-height: 1.8;
+  }
+
+  .contact-list li {
+    display: flex;
+    gap: 10px;
+  }
+
+  .label {
+    color: var(--accent);
+    font-weight: 500;
+  }
+
+  a {
+    color: var(--text);
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  a:hover {
+    color: var(--accent);
+  }
+
+  @media (max-width: 700px) {
+    .contact-list li {
+      flex-direction: column;
+      gap: 2px;
+    }
+  }
+</style>
